@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect } from 'react';
+import Sidebar from './components/Sidebar';
+import getWeather from './api/weatherAPI';
+import Forecast from './components/Forecast';
+import '../src/css/style.css';
+
+
 
 function App() {
+  // const [textState, setTextState] = useState({searchTerm: ''})
+  const [currentWeather, setCurrentWeather] = useState()
+
+  const fetchWeatherAPI = async (searchTerm) => {
+   const weather = await getWeather(searchTerm)
+   console.log('MYWEATHER:');
+    console.log(weather);
+    setCurrentWeather(weather)
+  }
+  console.log(currentWeather);
+
+
+  
+  const pastSearches = 7;
+  
+  // const globalVars = {
+  //   textState,
+  //   setTextState,
+  //   pastSearches
+  // }
+  
+//  const AppContext = React.createContext()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <AppContext.Provider value={globalVars}>
+      <div className='container'>
+
+      {/* <Sidebar textState={textState} setTextState={setTextState} fetchWeatherAPI={fetchWeatherAPI}/> */}
+      <Sidebar fetchWeatherAPI={fetchWeatherAPI}/>
+      <Forecast currentWeather={currentWeather} setCurrentWeather={setCurrentWeather} />
+
+      </div>
+    // </AppContext.Provider>
+
   );
 }
 

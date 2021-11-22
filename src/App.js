@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Searchbar from "./components/Searchbar";
 import { getWeather, getFiveDayForecast } from "./api/weatherAPI";
 import Forecast from "./components/Forecast";
-import FiveDayForecast from "./components/FiveDayForecast";
+// import FiveDayForecast from "./components/FiveDayForecast";
 import "../src/css/style.css";
 
 //create context
@@ -70,7 +70,7 @@ function App() {
       <div className="container">
         <Searchbar />
         <Forecast />
-        <FiveDayForecast />
+        {/* <FiveDayForecast /> */}
       </div>
     </AppContext.Provider>
   );

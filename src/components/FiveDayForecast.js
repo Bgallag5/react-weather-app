@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../App";
-import FiveDayCard from "./FiveDayCard";
+// import FiveDayCard from "./FiveDayCard.js";
 
 export default function FiveDayForecast() {
   const { fiveDayForecast } = useContext(AppContext);
@@ -14,11 +14,11 @@ export default function FiveDayForecast() {
       <h1 className="title">5 Day Forecast</h1>
       <div className="card">
         <div className="card-content">
-          <div className="content columns">
+          {/* <div className="content columns">
             {fiveDayForecast.map((weather) => {
               return <FiveDayCard weather={weather} />;
             })}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -40,33 +40,33 @@ export default function Forecast() {
                 </div>
                 <div className="columns container block">
                   <div className="column is-one-third block m-2">
-                    <h4 className="subtitle m-1">
+                    <h4 className="subtitle my-1 pt-2 mx-5">
                       Temperature: {Math.round(kelvinToFahrenheit(temp))} &deg;F
                     </h4>
-                    <div className="columns is-gapless is-vcentered">
+                    <div className="columns is-gapless is-vcentered mx-0">
                       <img
                         className="column is-4"
                         src={iconSource}
                         alt="weather icon"
-                        style={{ width: "80px", height: "80px" }}
+                        style={{ width: "120px", height: "120px" }}
                       ></img>
-                      <p className="cloumn is-8">
+                      <p className="cloumn is-8 subtitle">
                         {description.replace(/\b(\w)/g, (k) => k.toUpperCase())}
                       </p>
                     </div>
                   </div>
 
                   <div className="column is-2 mx-2 mt-4">
-                    <p className=" m-2">
+                    <p className="subtitle m-2">
                       High: {Math.round(kelvinToFahrenheit(temp_max))}&deg;F
                     </p>
-                    <p className=" m-2">
+                    <p className="subtitle m-2">
                       Low: {Math.round(kelvinToFahrenheit(temp_min))}&deg;F
                     </p>
                   </div>
                   <div className="column is-3 mx-2 mt-4">
-                    <p className="is-one-fourth m-2">Humidity: {humidity}%</p>
-                    <p className="is-one-fourth m-2">Wind Gusts: {wind}mph</p>
+                    <p className="subtitle m-2">Humidity: {humidity}%</p>
+                    <p className="subtitle m-2">Wind Gusts: {wind}mph</p>
                   </div>
                 </div>
               </div>

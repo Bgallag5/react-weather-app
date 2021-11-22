@@ -9,7 +9,6 @@ export default function Searchbar() {
   const [textState, setTextState] = useState("");
   const [debouncedTerm, setDebouncedTerm] = useState(textState);
 
-
   const handleSearchChange = (e) => {
     setTextState(e.target.value);
   };
@@ -26,7 +25,7 @@ export default function Searchbar() {
   }
 
   useEffect(() => {
-    //if text state changes after 2 seconds, return clearTimeout and re-run useEffect, 
+    //if text state changes after 2 seconds, return clearTimeout and re-run useEffect,
     //if text state doesn't change after 2, setDebouncedTerm as the textState
     const searchTimer = setTimeout(() => {
       setDebouncedTerm(textState);
@@ -41,12 +40,12 @@ export default function Searchbar() {
     }
   }, [debouncedTerm]);
 
-  //set last 5 searches to display under searchbar 
+  //set last 5 searches to display under searchbar
   let recentSearches = [...pastSearches];
-  //[...new Set(arr)] makes new array of ONLY UNIQUE values, removes duplicates 
+  //[...new Set(arr)] makes new array of ONLY UNIQUE values, removes duplicates
   let unique = [...new Set(recentSearches)];
-  const lastFiveSearches = unique.slice(-5)
-  console.log( "Last Five:", lastFiveSearches);
+  const lastFiveSearches = unique.slice(-5);
+  console.log("Last Five:", lastFiveSearches);
 
   return (
     <div className="container">
@@ -70,15 +69,29 @@ export default function Searchbar() {
             Search
           </button>
         </div>
-      <div className="container column is-12 mt-0 pt-0" style={{}}>
-        <nav>
-          <div className="is-flex is-justify-content-center is-align-content-center recent-searches-container">
-            {lastFiveSearches.map((city) => {
-              return <h5 className='recent-searches mx-3' onClick={() => getWeather(city)}>{city}</h5>;
-            })}
-          </div>
-        </nav>
-      </div>
+        <div className="container column is-12 mt-0 pt-0" style={{}}>
+          <nav>
+            <div className="container is-flex is-justify-content-center is-flex-direction-wrap recent-searches-container">
+              <h5 className="mx-3 recent-label">Recent Searches: </h5>
+              {lastFiveSearches.length <= 0 ? (
+                <h5 className="recent-label-empty">
+                  will appear here...
+                </h5>
+              ) : (
+                lastFiveSearches.map((city) => {
+                  return (
+                    <h5
+                      className="recent-searches mx-3"
+                      onClick={() => getWeather(city)}
+                    >
+                      {city}
+                    </h5>
+                  );
+                })
+              )}
+            </div>
+          </nav>
+        </div>
       </div>
     </div>
   );

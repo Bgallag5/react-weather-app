@@ -13,7 +13,7 @@ function App() {
   const [currentWeather, setCurrentWeather] = useState();
   const [fiveDayForecast, setFiveDayForecast] = useState([]);
   const placeholders = ['New York', 'London', 'Los Angeles', 'Tokyo', 'Paris']
-  const [pastSearches, setPastSearches] = useState(placeholders)
+  const [pastSearches, setPastSearches] = useState([])
 
 
   // fetch weather API and set states

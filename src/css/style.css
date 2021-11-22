@@ -6,6 +6,16 @@ html {
     color: white;
     font-size: 1rem;
 }
+.recent-label{
+    color: white;
+    font-size: 1rem;
+}
+
+.recent-label-empty{
+    color: white;
+    font-size: .8rem;
+    margin-top: 4px;
+}
 
 .recent-searches:hover{
     color: rgb(82, 219, 144);
@@ -17,5 +27,6 @@ html {
 }
 
 .recent-searches-container{
-    margin-right: 30%;
+    margin-right: 20%;
+    
 }

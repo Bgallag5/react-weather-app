@@ -28,7 +28,7 @@ function App() {
     //setStates
     setCurrentWeather(weather);
     //first 5 of results
-    setFiveDayForecast(fiveDay.slice(0, 5));
+    setFiveDayForecast(fiveDay.slice(1, 6));
     // pastSearches.unshift(weather.name)
     // localStorage.setItem('past-searches', pastSearches)
   };

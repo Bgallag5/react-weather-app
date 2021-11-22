@@ -2,6 +2,8 @@
 
 # Weather App
 
+<img width="1422" alt="Screen Shot 2021-11-22 at 1 41 28 PM" src="https://user-images.githubusercontent.com/82895658/142932216-0140a47d-92b4-4f14-9302-0d52a54c1fac.png">
+
 
 ### Table of Contents
 

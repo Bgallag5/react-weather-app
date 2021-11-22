@@ -1,24 +1,36 @@
 import React from "react";
+import { useContext } from "react/cjs/react.development";
 import { kelvinToFahrenheit } from "temperature";
+import { AppContext } from "../App";
 
-export default function Forecast(props) {
-  const { currentWeather, setCurrentWeather } = props;
-  const { name, humidity, temp_max, temp_min, temp, dt, description, icon, country } =
-    currentWeather !== undefined ? currentWeather : {};
-  console.log(icon);
+export default function Forecast() {
+  //destructure currentWeather from context
+  const { currentWeather } = useContext(AppContext);
+  const {
+    name,
+    humidity,
+    temp_max,
+    temp_min,
+    temp,
+    dt,
+    description,
+    icon,
+    country,
+  } = currentWeather !== undefined ? currentWeather : {};
   const iconSource = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
   return (
-    <div className="section forecast">
+    <div className="section forecast m-2 p-4">
       <h1 className="title">Current Weather</h1>
       <div className="card">
         <div className="card-content">
           <div className="content">
             {currentWeather !== undefined ? (
               <div className="container">
-                <h3 className="subtitle">{name}, {country}</h3>
+                <h3 className="subtitle">
+                  {name}, {country}
+                </h3>
                 <div className="columns container block">
-                    
                   <div className="column is-one-third block m-2">
                     <h4 className="subtitle m-1">
                       Temperature: {Math.round(kelvinToFahrenheit(temp))} &deg;F
@@ -36,7 +48,6 @@ export default function Forecast(props) {
                     </div>
                   </div>
 
-                  {/* <div className='columns'> */}
                   <div className="column is-one-third mx-2">
                     <p className="is-one-fourth p-2">
                       High: {Math.round(kelvinToFahrenheit(temp_max))}&deg;F
@@ -48,7 +59,6 @@ export default function Forecast(props) {
                   <div className="column is-one-third">
                     <p className="is-one-fourth p-2">Humidity: {humidity}</p>
                   </div>
-                  {/* </div> */}
                 </div>
               </div>
             ) : (
@@ -56,23 +66,11 @@ export default function Forecast(props) {
             )}
           </div>
         </div>
-        {/* <footer className="card-footer">
-        <a href="#" className="card-footer-item">
-          Save
-        </a>
-        <a href="#" className="card-footer-item">
-          Edit
-        </a>
-        <a href="#" className="card-footer-item">
-          Delete
-        </a>
-      </footer> */}
       </div>
     </div>
   );
 }
 
 // "http://openweathermap.org/img/wn/${todaysWeather.icon}@2x.png"
-
-// regex to Title Case any str
+// regex to Title Case any str:
 // str.replace(/\b(\w)/g, k => k.toUpperCase())

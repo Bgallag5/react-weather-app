@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React  from "react";
 import { kelvinToFahrenheit } from "temperature";
 
 export default function FiveDayCard({ weather }) {
   console.log(weather);
 
   //destructure props 
-  const { dt, day, night, humidity, icon } = weather;
+  const { dt, day, night, icon } = weather;
 
   //set vars 
   const newDate = new Date(dt * 1000);

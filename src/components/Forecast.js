@@ -20,9 +20,8 @@ export default function Forecast() {
   } = currentWeather !== undefined ? currentWeather : {};
   const iconSource = `http://openweathermap.org/img/wn/${icon}@2x.png`;
   const date = new Date(dt * 1000);
-  console.log(date);
   const humanDate = date.toGMTString().split(" ").splice(0, 3);
-  console.log(humanDate);
+
 
   return (
     <div className="section forecast m-2 p-4">

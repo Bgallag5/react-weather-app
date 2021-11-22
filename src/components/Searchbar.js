@@ -74,9 +74,7 @@ export default function Searchbar() {
             <div className="container is-flex is-justify-content-center is-flex-direction-wrap recent-searches-container">
               <h5 className="mx-3 recent-label">Recent Searches: </h5>
               {lastFiveSearches.length <= 0 ? (
-                <h5 className="recent-label-empty">
-                  will appear here...
-                </h5>
+                <h5 className="recent-label-empty">will appear here...</h5>
               ) : (
                 lastFiveSearches.map((city) => {
                   return (

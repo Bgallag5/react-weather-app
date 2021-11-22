@@ -12,9 +12,8 @@ function App() {
   //declare weather and fiveDay state
   const [currentWeather, setCurrentWeather] = useState();
   const [fiveDayForecast, setFiveDayForecast] = useState([]);
-  const placeholders = ['New York', 'London', 'Los Angeles', 'Tokyo', 'Paris']
-  const [pastSearches, setPastSearches] = useState([])
-
+  // const placeholders = ["New York", "London", "Los Angeles", "Tokyo", "Paris"];
+  const [pastSearches, setPastSearches] = useState([]);
 
   // fetch weather API and set states
   const fetchWeatherAPI = async (searchTerm) => {
@@ -34,47 +33,27 @@ function App() {
   };
 
   //on app load
-//1 get history from local storage
-//2 if history, split string then push that history to state
+  //get search history from local storage, set to state
   useEffect(() => {
-   let history = localStorage.getItem('past-searches');
-   console.log(history);
-   if (history){
-    //  history.split(',')
-     const pastCities =  history.split(',')
-    setPastSearches(pastCities)
-   }
+    let history = localStorage.getItem("past-searches");
+    if (history) {
+      const pastCities = history.split(",");
+      setPastSearches(pastCities);
+    }
   }, []);
 
   //on currentWeather change
-  //1. push current city name to pastSearches
-  //2. setLocalStorage to pasSearches
+  //push current city to pastSearches and set local storage to pastSearches
   useEffect(() => {
-    if (currentWeather){
-      console.log(currentWeather.name);
+    if (currentWeather) {
       let name = currentWeather.name;
-      name.toString()
-      setPastSearches([...pastSearches, name])
+      name.toString();
+      setPastSearches([...pastSearches, name]);
       //past searches was not being set in time to also be set in local storage...
-      //solution: set local storage directly as same value being set above 
-      localStorage.setItem('past-searches', [...pastSearches, name])
+      //solution: set local storage directly as same value being set above
+      localStorage.setItem("past-searches", [...pastSearches, name]);
     }
-
-  }, [currentWeather])
-
-  console.log(pastSearches);
-
-  // useEffect(() => {
-  //   if (currentWeather === undefined || currentWeather === '') return;
-  //   let city = currentWeather.name
-  //   setPastSearches({...pastSearches, city})
-  //   console.log(currentWeather);
-  //   console.log(pastSearches);
-  // //  let searchHistory = localStorage.getItem('past-searches');
-  // //  console.log(searchHistory);
-
-  // //   setPastSearches()
-  // }, [currentWeather]); 
+  }, [currentWeather]);
 
   //global context variables
   const globalVars = {
@@ -82,7 +61,7 @@ function App() {
     setCurrentWeather,
     fetchWeatherAPI,
     fiveDayForecast,
-    pastSearches
+    pastSearches,
   };
 
   return (

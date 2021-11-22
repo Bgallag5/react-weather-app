@@ -1,12 +1,49 @@
-#weatherAPP
+ [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 
-A React weather app that allows the user to search for a city and get the current weather for that city. (bonus: maybe also 5 day?)
+# Weather App
 
-Uses API request to fetch data
+img
 
-Uses cookies or localStorage to save past user searches 
+### Table of Contents
 
-Past user searches are displayed in a sidebar
+* [Description](#description)
+* [Installation](#installation)
+* [Heroku Link](#heroku-link)
+* [Technology Used](#technology-used)
+* [API](#API)
+* [Credits](#credits)
 
-Give the temperature some kind of variable color associated with it's temp. hot red - cold blue/purple ;
+### Description
+
+A simple weather application that lets users search for the weather in any city around the world. Get current weather, and the five day forecast. Past searches are saved and displayed for easy re-fetching.  
+
+### Installation:
+```
+# Clone this repository
+$ git clone git@github.com:Bgallag5/react-weather-app.git
+
+# Install dependencies
+$ npm install
+
+# Run the app
+$ npm start
+```
+
+### Heroku Link
+[Weather App](https://pocket-traders.herokuapp.com/)
+
+### Technology Used
+* React
+* JavaScript
+* Axios
+* Bulma
+
+### API
+
+[Open Weather API](https://openweathermap.org/api);
+
+## License  
+  
+Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
+
 

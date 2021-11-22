@@ -24,7 +24,7 @@ export async function getWeather(place) {
     country,
     lat,
     lon,
-    wind
+    wind,
   };
 
   return weatherObj;
@@ -43,6 +43,6 @@ export async function getFiveDayForecast(place, lat, lon) {
     const humidity = singleDay.humidity;
     return { dt, icon, day, night, humidity };
   });
-  console.log(data);
+  
   return data;
-};
+}

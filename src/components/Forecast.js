@@ -56,7 +56,7 @@ export default function Forecast() {
                     </div>
                   </div>
 
-                  <div className="column is-2 mx-2 mt-4">
+                  <div className="column is-2 mx-2 mt-5">
                     <p className="subtitle m-2">
                       High: {Math.round(kelvinToFahrenheit(temp_max))}&deg;F
                     </p>
@@ -64,7 +64,7 @@ export default function Forecast() {
                       Low: {Math.round(kelvinToFahrenheit(temp_min))}&deg;F
                     </p>
                   </div>
-                  <div className="column is-3 mx-2 mt-4">
+                  <div className="column is-3 mx-2 mt-5">
                     <p className="subtitle m-2">Humidity: {humidity}%</p>
                     <p className="subtitle m-2">Wind Gusts: {wind}mph</p>
                   </div>

@@ -2,7 +2,6 @@
 
 # Weather App
 
-img
 
 ### Table of Contents
 
@@ -11,7 +10,7 @@ img
 * [Heroku Link](#heroku-link)
 * [Technology Used](#technology-used)
 * [API](#API)
-* [Credits](#credits)
+* [License](#license)
 
 ### Description
 

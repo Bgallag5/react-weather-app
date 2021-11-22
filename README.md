@@ -30,7 +30,7 @@ $ npm start
 ```
 
 ### Heroku Link
-[Weather App](https://pocket-traders.herokuapp.com/)
+[Weather App](https://sheltered-ravine-61938.herokuapp.com/)
 
 ### Technology Used
 * React
@@ -40,7 +40,7 @@ $ npm start
 
 ### API
 
-[Open Weather API](https://openweathermap.org/api);
+[Open Weather API](https://openweathermap.org/api)
 
 ## License  
   

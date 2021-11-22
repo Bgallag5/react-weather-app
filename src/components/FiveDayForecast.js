@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../App";
-import FiveDayCard from "./FiveDayCard.js";
+import FiveDayCard from "./fiveDayCard";
 
 export default function FiveDayForecast() {
   const { fiveDayForecast } = useContext(AppContext);

@@ -58,7 +58,7 @@ export default function Searchbar() {
             className="input column m-1"
             type="text"
             name="searchTerm"
-            placeholder="Search By City"
+            placeholder="Search By City.."
             value={textState}
             onChange={handleSearchChange}
           />
